@@ -74,12 +74,12 @@ class DataIngestion:
 
 
 
-# if __name__ == "__main__":
-#     obj = DataIngestion()
-#     day_train,day_test,hour_train,hour_test = obj.initiate_data_ingestion()
+if __name__ == "__main__":
+    obj = DataIngestion()
+    day_train,day_test,hour_train,hour_test = obj.initiate_data_ingestion()
 
-#     tobj = DataTranformation()
-#     day_train_df,day_test_df,hour_train_df,hour_test_df = tobj.initiate_data_tranformation(day_train,day_test,hour_train,hour_test)
+    tobj = DataTranformation()
+    day_train_df,day_test_df,hour_train_df,hour_test_df = tobj.initiate_data_tranformation(day_train,day_test,hour_train,hour_test)
 
-#     model_trainer = ModelTrainer()
-#     print(model_trainer.initiate_model_trainer(day_train_df,day_test_df,hour_train_df,hour_test_df))
+    model_trainer = ModelTrainer()
+    print(model_trainer.initiate_model_trainer(day_train_df,day_test_df,hour_train_df,hour_test_df))
