@@ -11,11 +11,12 @@
         />
         <style>
             body {
-                background-color: #f8f9fa;
+                background-color: #222;
+                color: #fff;
             }
 
             .container {
-                background-color: #ffffff;
+                background-color: #333;
                 padding: 30px;
                 border-radius: 10px;
                 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -31,6 +32,26 @@
                 font-weight: bold;
             }
 
+            .form-control {
+                background-color: #444;
+                color: #fff;
+            }
+
+            .form-select {
+                background-color: #444;
+                color: #fff;
+            }
+
+            .btn-primary {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            .btn-primary:hover {
+                background-color: #0069d9;
+                border-color: #0062cc;
+            }
+
             .btn-predict {
                 width: 25%;
             }
@@ -42,10 +63,22 @@
                 <h2>Please enter details to predict Bike Share</h2>
             </div>
             <div class="mt-4">
+                {% if casual is defined and registered is defined %}
+                <div class="my-4">
+                    <h2>Casual share is : {{casual}}</h2>
+                    <h2>Registered share is : {{registered}}</h2>
+                </div>
+                {% endif %}
                 <form action="{{url_for('predict')}}" method="POST">
                     <div class="mb-3">
                         <label for="date" class="form-label">Date</label>
-                        <input type="date" name="date" id="date" required />
+                        <input
+                            type="date"
+                            name="date"
+                            id="date"
+                            class="form-control"
+                            required
+                        />
                     </div>
                     <div class="mb-3">
                         <label for="hour" class="form-label"
@@ -169,10 +202,6 @@
                         </button>
                     </div>
                 </form>
-                <div class="mt-4">
-                    <h2>Casual share is : {{casual}}</h2>
-                    <h2>Registered share is : {{registered}}</h2>
-                </div>
             </div>
         </div>
         <script
